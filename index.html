@@ -1,0 +1,31 @@
+<html>
+<p>my code block html</p>
+<img id="pic" src="https://thumbs.dreamstime.com/z/yellow-gerbera-flower-3434173.jpg
+" width="200"/>
+<br>
+ 
+<button id="pervious"> pervious </button>
+<button id="next"> next</button>
+<script>
+var srcs;
+
+
+srcs = ['https://thumbs.dreamstime.com/z/yellow-gerbera-flower-3434173.jpg', 'https://thumbs.dreamstime.com/z/daisy-flower-isolated-hand-made-clipping-path-14184671.jpg', 'https://thumbs.dreamstime.com/z/butterfly-flower-23417093.jpg', 'https://thumbs.dreamstime.com/z/cosmos-flower-field-face-to-sunrise-35613249.jpg'];
+
+
+document.getElementById('next').addEventListener('click', (event) => {
+  srcs.push(srcs.shift());
+  let element_pic = document.getElementById('pic');
+  element_pic.setAttribute("src", srcs[0]);
+
+});
+
+document.getElementById('pervious').addEventListener('click', (event) => {
+  srcs.unshift(srcs.slice(-1)[0]);
+  let element_pic2 = document.getElementById('pic');
+  element_pic2.setAttribute("src", srcs.pop());
+
+});
+</script>
+
+</html>
